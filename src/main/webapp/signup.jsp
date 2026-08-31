@@ -15,7 +15,7 @@ Please Signup:
 <form method="post" action="signup">
 
 Username: <input type="text" name="username"><br><br>
-Password: <input type="text" name="password"><br><br>
+Password: <input type="password" name="password"><br><br>
 <input type="submit" value="SIGNUP!!!!">
 
 </form>

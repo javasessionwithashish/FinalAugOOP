@@ -30,6 +30,8 @@ public class signupServlet extends HttpServlet {
 		UserControllerImplements uc = new UserControllerImplements();
 		
 		uc.signupUser(username, password);
+		
+		request.setAttribute("message", "Signup Successful! Please Login.");
 	
 	request.getRequestDispatcher("login.jsp").forward(request, response);
 		

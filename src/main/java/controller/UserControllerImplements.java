@@ -2,7 +2,16 @@ package controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import org.apache.commons.codec.digest.DigestUtils;
+
+
+
+
+
+
 
 public class UserControllerImplements implements UserController {
 
@@ -27,7 +36,26 @@ public class UserControllerImplements implements UserController {
 	
 	public void signupUser(String username, String password) {
 	
-				
+		String sql = "insert into user_table(username,password) values (?,?);";	
+		
+		try {
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			
+		String hashPassword=	DigestUtils.sha256Hex(password.getBytes());
+		System.out.println(hashPassword);
+			
+			pstm.setString(1, username);
+			pstm.setString(2, hashPassword);
+			
+			
+	
+			
+			pstm.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			
+		}
 		
 	}
 
