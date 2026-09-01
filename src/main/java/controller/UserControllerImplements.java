@@ -36,7 +36,7 @@ public class UserControllerImplements implements UserController {
 	
 	public void signupUser(String username, String password) {
 	
-		String sql = "insert into user_table(username,password) values (?,?);";	
+		String sql = "insert into user_tbl(username,password) values (?,?);";	
 		
 		try {
 			PreparedStatement pstm = conn.prepareStatement(sql);
