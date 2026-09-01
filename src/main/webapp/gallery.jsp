@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home</title>
+<title>Gallery Page</title>
 </head>
 <body>
-
 <jsp:include page="navbar.jsp" />
 
-<h1>Welcome to the Home Page.</h1>
+<h1> This is gallery page.</h1>
 
 </body>
 </html>
