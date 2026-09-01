@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import controller.UserController;
+import controller.UserControllerImplements;
+
 
 @WebServlet("/login")
 public class loginServlet extends HttpServlet {
@@ -29,7 +32,9 @@ public class loginServlet extends HttpServlet {
 		String username= request.getParameter("username");
 	String password=request.getParameter("password");
 	
-	if(username.equals("admin") && password.equals("12345"))
+	UserControllerImplements uc = new UserControllerImplements();
+	
+	if(uc.loginUser(username, password)==true)
 	{
 		request.getRequestDispatcher("home.jsp").forward(request, response);
 	}

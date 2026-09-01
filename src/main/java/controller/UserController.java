@@ -5,6 +5,6 @@ public interface UserController {
 	
 	void signupUser(String username, String password);
 	
-	void loginUser(String username, String password);
+	boolean loginUser(String username, String password);
 
 }
